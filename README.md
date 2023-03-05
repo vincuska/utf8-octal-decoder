@@ -1,1 +1,1 @@
-# utf8-and-utf8-to-octal-decoder
+# UTF-8 and UTF-8 to octal decoder
