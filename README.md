@@ -30,25 +30,25 @@ My very good friend of mine was "cracking" a php file and it had a bunch of enco
 
 Clone the project
 
-```bash
+```batch
   git clone https://github.com/HyDra-55/utf8-octal-decoder
 ```
 
 Go to the project directory
 
-```bash
+```batch
   cd utf8-octal-decoder
 ```
 
 Install dependencies
 
-```bash
+```batch
   pip install -r requirements.txt
 ```
 
 Start the program
 
-```bash
+```batch
   python decoder.py
 ```
 
