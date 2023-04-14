@@ -1,6 +1,5 @@
 from rich import print
 import os
-import datetime 
 
 replacements = [
     ('\\x41', 'A'),
@@ -147,7 +146,7 @@ replacements = [
 while True:
     try:
         filename = input("File name (only .txt): ")
-        if filename.strip():  # check if input is not empty or only contains spaces
+        if filename.strip():
             if filename.endswith(".txt"):
                 with open(filename, 'r') as file:
                     filedata = file.read()
@@ -170,9 +169,8 @@ x = 0
 for items in replacements:
     filedata = filedata.replace(replacements[x], replacements[x + 1])
     x += 2
-
-decoded_filename = "decoded.txt"
-with open(decoded_filename, 'w') as file:
-  file.write(filedata)
+    decoded_filename = "decoded.txt"
+    with open(decoded_filename, 'w') as file:
+        file.write(filedata)
 
 print(f"\n[green]Decoded and saved to [/green][cyan]{os.path.abspath(decoded_filename)}[/cyan]")
