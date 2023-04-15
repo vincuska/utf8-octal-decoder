@@ -1,6 +1,8 @@
 from rich import print
 import os
 
+decoded_filename = "decoded.txt"
+
 replacements = [
     '\\x41', 'A' , '\\x42', 'B' , '\\x43', 'C' , '\\x44', 'D' , '\\x45', 'E' , '\\x46', 'F' ,
     '\\x47', 'G' , '\\x48', 'H' , '\\x49', 'I' , '\\x4a', 'J' , '\\x4b', 'K' , '\\x4c', 'L' ,
@@ -49,17 +51,24 @@ while True:
     except FileNotFoundError:
         print("\n[red]File not found![/red]\n")
 
-x = 0
 
-for item in replacements:
-    try:
-        filedata = filedata.replace(replacements[x], replacements[x + 1])
-        x += 2
-    except IndexError:
-        break
-    decoded_filename = "decoded.txt"
-    with open(decoded_filename, 'w') as file:
-        file.write(filedata)
+def replace_in_file(filedata, replacements, decoded_filename):
+    if len(replacements) % 2 != 0:
+        raise ValueError("The replacements list must have an even number of elements")
+
+    x = 0
+    for item in replacements:
+        try:
+            filedata = filedata.replace(replacements[x], replacements[x + 1])
+            x += 2
+        except IndexError:
+            break
+        with open(decoded_filename, 'w') as file:
+            file.write(filedata)
+        print(f"\n[green]Decoded and saved to [/green][cyan]{os.path.abspath(decoded_filename)}[/cyan]")
+
+    return filedata
 
 
-print(f"\n[green]Decoded and saved to [/green][cyan]{os.path.abspath(decoded_filename)}[/cyan]")
+if __name__ == "__main__":
+    replace_in_file(filedata, replacements, decoded_filename)
