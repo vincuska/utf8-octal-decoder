@@ -1,4 +1,3 @@
-from rich import print
 import os
 
 decoded_filename = "decoded.txt"
@@ -38,18 +37,18 @@ while True:
                 with open(filename, 'r') as file:
                     filedata = file.read()
                     if len(filedata) == 0:
-                        print("\n[red]File empty![/red]\n")
+                        print("\nFile empty!\n")
                     else:
                         break
             else:
-                print("\n[red]File name not ending with .txt![/red]\n")
+                print("\nFile name not ending with .txt!\n")
         else:
-            print("\n[red]Input needed![/red]\n")
+            print("\nInput needed!\n")
     except KeyboardInterrupt:
-        print("\n[red]Bye![/red]\n")
+        print("\nBye!\n")
         break
     except FileNotFoundError:
-        print("\n[red]File not found![/red]\n")
+        print("\nFile not found!\n")
 
 
 def replace_in_file(filedata, replacements, decoded_filename):
@@ -65,7 +64,7 @@ def replace_in_file(filedata, replacements, decoded_filename):
             break
         with open(decoded_filename, 'w') as file:
             file.write(filedata)
-        print(f"\n[green]Decoded and saved to [/green][cyan]{os.path.abspath(decoded_filename)}[/cyan]")
+        print(f"\nDecoded and saved to {os.path.abspath(decoded_filename)}")
 
     return filedata
 
