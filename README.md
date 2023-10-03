@@ -40,12 +40,6 @@ Go to the project directory
   cd utf8-octal-decoder
 ```
 
-Install dependencies
-
-```batch
-  pip install -r requirements.txt
-```
-
 Start the program
 
 ```batch
