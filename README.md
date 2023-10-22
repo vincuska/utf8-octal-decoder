@@ -17,7 +17,7 @@ This amazing tool not only decodes utf-8 but utf-8 in octal form!!!
 ## Run Locally
 
 ```batch
-  git clone https://github.com/HyDra-55/utf8-octal-decoder
+  git clone https://github.com/vincuska/utf8-octal-decoder
   cd utf8-octal-decoder
 ```
 
