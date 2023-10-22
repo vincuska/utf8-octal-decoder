@@ -6,7 +6,7 @@ This amazing tool not only decodes utf-8 but utf-8 in octal form!!!
 
 ## Features
 
- So if there's any wierd stuff like this:
+ So if there's any wierd stuff like this in  a file:
 + `\x63\x6F\x6F\x6C`
 + `\143\157\157\154`
 + `\x63\x6F\157\154`
